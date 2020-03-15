@@ -45,6 +45,7 @@ public class FileUploadController {
 		return "uploadForm";
 	}
 
+	//recoger archivo por url con @PathVariable
 	@GetMapping("/files/{filename:.+}")
 	@ResponseBody
 	public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
