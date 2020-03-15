@@ -25,12 +25,14 @@ import com.example.uploadingfiles.storage.StorageService;
 @Controller
 public class FileUploadController {
 
-	private final StorageService storageService;
-
+	//Inyecto la dependencia (Interfaz StorageService)
 	@Autowired
+	private  StorageService storageService;
+
+	/*@Autowired
 	public FileUploadController(StorageService storageService) {
 		this.storageService = storageService;
-	}
+	}*/
 
 	@GetMapping("/")
 	public String listUploadedFiles(Model model) throws IOException {
