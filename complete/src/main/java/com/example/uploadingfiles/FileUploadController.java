@@ -60,9 +60,11 @@ public class FileUploadController {
 			RedirectAttributes redirectAttributes) {
 
 		storageService.store(file);
+		System.out.println("El tamaño del archivo es: "+ file.getSize()+ " bytes");
+		System.out.println("El archivo es de tipo: "+ file.getContentType());
 		redirectAttributes.addFlashAttribute("message",
 				"You successfully uploaded " + file.getOriginalFilename() + "!");
-
+		
 		return "redirect:/";
 	}
 
